@@ -1,10 +1,13 @@
-import express from 'express';
+
+const UserController = require('@controllers/UserController');
+const express = require('express');
 
 const app = express();
+const uc = new UserController();
 
 app.get('/', (request, response) => {
 	response.json({
-		message: 'Hello World!'
+		user: uc.showUser()
 	});
 });
 
